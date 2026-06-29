@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.625rem;
+
+  /* shadcn semantic tokens — remapped to the V4 Studios dark palette */
+  --background: #0a0908;
+  --foreground: #f3f1ec;
+  --card: #17151a;
+  --card-foreground: #f3f1ec;
+  --popover: #17151a;
+  --popover-foreground: #f3f1ec;
+  --primary: #f2641b;
+  --primary-foreground: #0a0908;
+  --secondary: #1f1c22;
+  --secondary-foreground: #f3f1ec;
+  --muted: #1f1c22;
+  --muted-foreground: #8c8893;
+  --accent: #c2355c;
+  --accent-foreground: #f3f1ec;
+  --destructive: #e54b4b;
+  --border: rgba(243, 241, 236, 0.08);
+  --input: rgba(243, 241, 236, 0.12);
+  --ring: #f2641b;
+}
+
+.dark {
+  --background: #0a0908;
+  --foreground: #f3f1ec;
+  --card: #17151a;
+  --card-foreground: #f3f1ec;
+  --popover: #17151a;
+  --popover-foreground: #f3f1ec;
+  --primary: #f2641b;
+  --primary-foreground: #0a0908;
+  --secondary: #1f1c22;
+  --secondary-foreground: #f3f1ec;
+  --muted: #1f1c22;
+  --muted-foreground: #8c8893;
+  --accent: #c2355c;
+  --accent-foreground: #f3f1ec;
+  --destructive: #e54b4b;
+  --border: rgba(243, 241, 236, 0.08);
+  --input: rgba(243, 241, 236, 0.12);
+  --ring: #f2641b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+
+  /* V4 Studios brand tokens — used directly in Navbar/Footer/custom sections */
+  --color-obsidian: #0a0908;
+  --color-charcoal: #17151a;
+  --color-bone: #f3f1ec;
+  --color-smoke: #8c8893;
+  --color-ember: #f2641b;
+  --color-garnet: #c2355c;
+  --color-hairline: rgba(243, 241, 236, 0.08);
+
+  --font-display: var(--font-unbounded);
+  --font-body: var(--font-jakarta);
+  --font-mono: var(--font-jetbrains);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-obsidian);
+    color: var(--color-bone);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Signature angular cut — used once per page as a section divider */
+.clip-wedge-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+}
+
+.clip-wedge-top {
+  clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* One clipped corner instead of rounded-everything — echoes the V mark */
+.clip-corner {
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+}
+
+.gradient-brand {
+  background-image: linear-gradient(135deg, var(--color-ember), var(--color-garnet));
+}
