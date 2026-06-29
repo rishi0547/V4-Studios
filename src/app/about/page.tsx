@@ -1,86 +1,93 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { team, whyChooseUs, process as processSteps } from "@/lib/data";
+import SpotlightCard from "@/components/effects/SpotlightCard";
+import { team, process } from "@/lib/data";
+
+const spotlightColors = [
+  "rgba(242, 100, 27, 0.2)",
+  "rgba(194, 53, 92, 0.2)",
+  "rgba(242, 100, 27, 0.2)",
+  "rgba(194, 53, 92, 0.2)",
+];
 
 export default function AboutPage() {
   return (
-    <>
-      {/* ── Intro ── */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <p className="font-mono text-sm tracking-wide text-ember">About us</p>
-        <h1 className="mt-2 max-w-2xl text-4xl font-bold sm:text-5xl">
-          A small team with a development-first mindset
+    <div className="bg-obsidian">
+      <section className="mx-auto max-w-7xl px-6 pt-20 pb-14 lg:px-10">
+        <span className="font-mono text-xs uppercase tracking-widest text-ember">
+          Who We Are
+        </span>
+        <h1 className="mt-3 font-display text-4xl font-semibold text-bone sm:text-5xl">
+          Four Specialists. One Focused Studio.
         </h1>
-        <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist">
-          V4 Studios was founded by four builders who believe great digital
-          products start with great engineering. We design, develop, and deliver
-          — end to end.
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-smoke sm:text-base">
+          V4 Studios is a tight-knit team of four digital specialists —
+          developers, designers, and creative producers who believe great
+          work comes from genuine collaboration. We operate with the
+          agility of a startup and the quality standards of a top-tier
+          agency, delivering work that&apos;s on time, on brand, and built to
+          last.
         </p>
-      </section>
 
-      {/* ── Team ── */}
-      <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="text-3xl font-bold">The Team</h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {team.map((member) => (
-              <div key={member.name} className="border border-line bg-white p-6 text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-ink text-canvas font-display text-xl font-bold">
-                  {member.initials}
-                </div>
-                <h3 className="mt-4 text-base font-semibold">{member.name}</h3>
-                <p className="mt-1 font-mono text-xs text-mist">{member.role}</p>
-              </div>
-            ))}
-          </div>
+        <div className="clip-corner mt-8 max-w-2xl border border-hairline bg-charcoal px-6 py-5">
+          <p className="font-mono text-xs uppercase tracking-wide text-ember">
+            Our Mission
+          </p>
+          <p className="mt-2 font-display text-lg text-bone">
+            Help ambitious brands launch, grow, and stand out — digitally,
+            visually, and creatively.
+          </p>
         </div>
       </section>
 
-      {/* ── Why Choose Us ── */}
-      <section className="bg-ink text-canvas">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="text-3xl font-bold">Why V4?</h2>
-          <div className="mt-12 grid gap-10 sm:grid-cols-2">
-            {whyChooseUs.map((item) => (
-              <div key={item.title}>
-                <h3 className="text-lg font-semibold text-canvas">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-mist">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Process ── */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="text-3xl font-bold">Our Process</h2>
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {processSteps.map((step) => (
-            <div key={step.number}>
-              <span className="font-mono text-3xl font-bold text-ember">
-                {step.number}
+      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
+        <h2 className="font-display text-2xl font-semibold text-bone">
+          The Team
+        </h2>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {team.map((member, i) => (
+            <SpotlightCard
+              key={member.name}
+              spotlightColor={spotlightColors[i % spotlightColors.length]}
+              className="flex flex-col items-start gap-4"
+            >
+              <span className="gradient-brand clip-corner flex h-12 w-12 items-center justify-center font-display text-lg font-semibold text-bone">
+                {member.initials}
               </span>
-              <h3 className="mt-3 text-base font-semibold">{step.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-mist">
+              <div>
+                <p className="font-display text-base font-semibold text-bone">
+                  {member.name}
+                </p>
+                <p className="font-mono text-xs text-smoke">{member.role}</p>
+              </div>
+            </SpotlightCard>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
+        <span className="font-mono text-xs uppercase tracking-widest text-ember">
+          How We Work
+        </span>
+        <h2 className="mt-3 font-display text-2xl font-semibold text-bone">
+          A clear, collaborative process.
+        </h2>
+        <p className="mt-2 max-w-2xl text-sm text-smoke">
+          From first call to final delivery — no surprises, no scope creep.
+        </p>
+
+        <div className="mt-10 grid gap-px overflow-hidden border border-hairline sm:grid-cols-2 lg:grid-cols-4">
+          {process.map((step) => (
+            <div key={step.number} className="bg-charcoal px-6 py-8">
+              <span className="font-mono text-sm text-ember">{step.number}</span>
+              <h3 className="mt-3 font-display text-base font-semibold text-bone">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-smoke">
                 {step.description}
               </p>
             </div>
           ))}
         </div>
-
-        <div className="mt-16 text-center">
-          <Button asChild className="gradient-brand clip-corner text-white hover:opacity-90" size="lg">
-            <Link href="/contact" className="flex items-center gap-2">
-              Work With Us <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
       </section>
-    </>
+    </div>
   );
 }

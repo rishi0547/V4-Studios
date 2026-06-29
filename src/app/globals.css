@@ -5,8 +5,6 @@
 
 :root {
   --radius: 0.625rem;
-
-  /* shadcn semantic tokens — remapped to the V4 Studios dark palette */
   --background: #0a0908;
   --foreground: #f3f1ec;
   --card: #17151a;
@@ -69,7 +67,6 @@
   --color-ring: var(--ring);
   --radius-lg: var(--radius);
 
-  /* V4 Studios brand tokens — used directly in Navbar/Footer/custom sections */
   --color-obsidian: #0a0908;
   --color-charcoal: #17151a;
   --color-bone: #f3f1ec;
@@ -84,6 +81,10 @@
 }
 
 @layer base {
+  html, body {
+    overflow-x: clip;
+  }
+
   body {
     background-color: var(--color-obsidian);
     color: var(--color-bone);
@@ -96,7 +97,6 @@
   }
 }
 
-/* Signature angular cut — used once per page as a section divider */
 .clip-wedge-bottom {
   clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
 }
@@ -105,7 +105,6 @@
   clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
 }
 
-/* One clipped corner instead of rounded-everything — echoes the V mark */
 .clip-corner {
   clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
 }

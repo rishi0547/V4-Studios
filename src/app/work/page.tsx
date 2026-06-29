@@ -1,55 +1,70 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import SpotlightCard from "@/components/effects/SpotlightCard";
 import { projects } from "@/lib/data";
+
+const spotlightColors = [
+  "rgba(242, 100, 27, 0.2)",
+  "rgba(194, 53, 92, 0.2)",
+  "rgba(242, 100, 27, 0.2)",
+];
 
 export default function WorkPage() {
   return (
-    <>
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <p className="font-mono text-sm tracking-wide text-ember">Portfolio</p>
-        <h1 className="mt-2 text-4xl font-bold sm:text-5xl">Our Work</h1>
-        <p className="mt-4 max-w-xl text-lg text-mist">
-          Case studies and projects that showcase what we build. More coming
-          soon.
+    <div className="bg-obsidian">
+      <section className="mx-auto max-w-7xl px-6 pt-20 pb-14 lg:px-10">
+        <span className="font-mono text-xs uppercase tracking-widest text-ember">
+          Selected Work
+        </span>
+        <h1 className="mt-3 font-display text-4xl font-semibold text-bone sm:text-5xl">
+          Projects, Coming Into Focus.
+        </h1>
+        <p className="mt-4 max-w-2xl text-sm text-smoke sm:text-base">
+          We&apos;re building out our first case studies. Here&apos;s a preview of
+          the kind of work we take on.
         </p>
+      </section>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <div
+      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, i) => (
+            <SpotlightCard
               key={project.id}
-              className="flex flex-col justify-between border border-line bg-white p-8"
+              spotlightColor={spotlightColors[i % spotlightColors.length]}
+              className="flex flex-col gap-4"
             >
-              <div>
-                <span className="font-mono text-xs text-ember">
-                  {project.category}
-                </span>
-                <h2 className="mt-2 text-xl font-semibold">{project.title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-mist">
-                  {project.description}
-                </p>
-              </div>
-            </div>
+              <span className="font-mono text-[11px] uppercase tracking-wide text-ember">
+                {project.category}
+              </span>
+              <h2 className="font-display text-xl font-semibold text-bone">
+                {project.title}
+              </h2>
+              <p className="text-sm leading-relaxed text-smoke">
+                {project.description}
+              </p>
+            </SpotlightCard>
           ))}
         </div>
       </section>
 
-      <section className="bg-ink text-canvas">
-        <div className="mx-auto max-w-6xl px-6 py-24 text-center">
-          <h2 className="text-3xl font-bold">Want to be featured here?</h2>
-          <p className="mx-auto mt-4 max-w-md text-mist">
-            We&apos;re taking on new projects. Let&apos;s create something worth
-            showing off.
-          </p>
-          <div className="mt-10">
-            <Button asChild className="gradient-brand clip-corner text-white hover:opacity-90" size="lg">
-              <Link href="/contact" className="flex items-center gap-2">
-                Start a Project <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
+        <div className="clip-corner flex flex-col items-start justify-between gap-6 border border-hairline bg-charcoal px-8 py-10 sm:flex-row sm:items-center">
+          <div>
+            <h3 className="font-display text-xl font-semibold text-bone">
+              Want to be our next case study?
+            </h3>
+            <p className="mt-1 text-sm text-smoke">
+              Let&apos;s build something worth showing off.
+            </p>
           </div>
+          <Link
+            href="/contact"
+            className="gradient-brand clip-corner flex shrink-0 items-center gap-2 px-5 py-2.5 text-sm font-medium text-bone hover:opacity-90"
+          >
+            Start a Project <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
-    </>
+    </div>
   );
 }
