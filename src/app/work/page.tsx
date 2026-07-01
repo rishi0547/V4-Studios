@@ -48,7 +48,7 @@ export default function WorkPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
-        <div className="clip-corner flex flex-col items-start justify-between gap-6 border border-hairline bg-charcoal px-8 py-10 sm:flex-row sm:items-center">
+        <div className="rounded-[10px] flex flex-col items-start justify-between gap-6 border border-hairline bg-charcoal px-8 py-10 sm:flex-row sm:items-center">
           <div>
             <h3 className="font-display text-xl font-semibold text-bone">
               Want to be our next case study?
@@ -59,7 +59,7 @@ export default function WorkPage() {
           </div>
           <Link
             href="/contact"
-            className="gradient-brand clip-corner flex shrink-0 items-center gap-2 px-5 py-2.5 text-sm font-medium text-bone hover:opacity-90"
+            className="gradient-brand rounded-[10px] flex shrink-0 items-center gap-2 px-5 py-2.5 text-sm font-medium text-bone hover:opacity-90"
           >
             Start a Project <ArrowRight className="h-4 w-4" />
           </Link>

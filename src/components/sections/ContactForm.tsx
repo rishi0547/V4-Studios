@@ -18,7 +18,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="clip-corner flex flex-col items-center justify-center border border-hairline bg-charcoal px-8 py-16 text-center">
+      <div className="rounded-[10px] flex flex-col items-center justify-center border border-hairline bg-charcoal px-8 py-16 text-center">
         <p className="font-display text-xl font-semibold text-bone">
           Message sent.
         </p>
@@ -32,7 +32,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="clip-corner border border-hairline bg-charcoal p-8"
+      className="rounded-[10px] border border-hairline bg-charcoal p-8"
     >
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
@@ -87,7 +87,7 @@ export default function ContactForm() {
 
       <Button
         type="submit"
-        className="gradient-brand clip-corner mt-8 w-full py-2.5 text-sm font-medium text-bone hover:opacity-90"
+        className="gradient-brand rounded-[10px] mt-8 w-full py-2.5 text-sm font-medium text-bone hover:opacity-90"
       >
         <span className="flex items-center justify-center gap-2">
           Send Message <Send className="h-4 w-4" />

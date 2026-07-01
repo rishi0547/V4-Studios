@@ -27,7 +27,7 @@ export default function AboutPage() {
           last.
         </p>
 
-        <div className="clip-corner mt-8 max-w-2xl border border-hairline bg-charcoal px-6 py-5">
+        <div className="rounded-[10px] mt-8 max-w-2xl border border-hairline bg-charcoal px-6 py-5">
           <p className="font-mono text-xs uppercase tracking-wide text-ember">
             Our Mission
           </p>
@@ -49,7 +49,7 @@ export default function AboutPage() {
               spotlightColor={spotlightColors[i % spotlightColors.length]}
               className="flex flex-col items-start gap-4"
             >
-              <span className="gradient-brand clip-corner flex h-12 w-12 items-center justify-center font-display text-lg font-semibold text-bone">
+              <span className="gradient-brand rounded-[10px] flex h-12 w-12 items-center justify-center font-display text-lg font-semibold text-bone">
                 {member.initials}
               </span>
               <div>

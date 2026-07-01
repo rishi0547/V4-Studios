@@ -106,7 +106,7 @@
 }
 
 .clip-corner {
-  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+  border-radius: 10px;
 }
 
 .gradient-brand {

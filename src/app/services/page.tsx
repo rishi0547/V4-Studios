@@ -70,7 +70,7 @@ export default function ServicesPage() {
       </div>
 
       <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
-        <div className="clip-corner flex flex-col items-start justify-between gap-6 border border-hairline bg-charcoal px-8 py-10 sm:flex-row sm:items-center">
+        <div className="rounded-[10px] flex flex-col items-start justify-between gap-6 border border-hairline bg-charcoal px-8 py-10 sm:flex-row sm:items-center">
           <div>
             <h3 className="font-display text-xl font-semibold text-bone">
               Not sure which service fits?

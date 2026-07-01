@@ -43,7 +43,7 @@ export default function AnimatedButton({
       onClick={onClick}
       className={`relative inline-flex h-[50px] min-w-[190px] cursor-pointer select-none items-center font-display text-sm font-medium ${className}`}
       style={{
-        clipPath: "polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%)",
+        borderRadius: "10px",
         transform: pressed ? "scale(0.98)" : "scale(1)",
         transition: "transform 0.15s ease",
         background: bg,
